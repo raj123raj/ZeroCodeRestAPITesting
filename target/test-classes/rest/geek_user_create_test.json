@@ -1,0 +1,79 @@
+{
+  "scenarioName": "test user creation endpoint",
+  "steps": [
+    {
+      "name": "test_successful_creation",
+      "url": "/api/users",
+      "method": "POST",
+      "request": {
+        "body": {
+          "firstName": "Rachel",
+          "lastName": "Green",
+          "departmentName":"IT",
+          "salary":100000.0
+        }
+      },
+      "verify": {
+        "status": 201,
+        "body": {
+          "id": "$NOT.NULL",
+          "firstName": "Rachel",
+          "lastName": "Green",
+          "departmentName":"IT",
+          "salary":100000.0
+        }
+      }
+    },
+    {
+      "name": "test_firstname_validation",
+      "url": "/api/users",
+      "method": "POST",
+      "request": {
+        "body": {
+          "firstName": "",
+          "lastName": "Bing",
+          "departmentName":"IT",
+          "salary":100000.0
+        }
+      },
+      "assertions": {
+        "status": 400,
+        "rawBody": "firstName can't be empty!"
+      }
+    },
+    {
+	  "name": "test_lastname_validation",
+	  "url": "/api/users",
+	  "method": "POST",
+	  "request": {
+	    "body": {
+	      "firstName": "Monica",
+	      "lastName": "",
+	      "departmentName":"Chef",
+	      "salary":100000.0
+	    }
+	  },
+	  "assertions": {
+	    "status": 400,
+	    "rawBody": "lastName can't be empty!"
+	  }
+	},
+   {
+	  "name": "test_departmentname_validation",
+	  "url": "/api/users",
+	  "method": "POST",
+	  "request": {
+	    "body": {
+	      "firstName": "Phoebe",
+	      "lastName": "Buffe",
+	      "departmentName":"",
+	      "salary":50000.0
+	    }
+	  },
+	  "assertions": {
+	    "status": 400,
+	    "rawBody": "DeparmentName can't be empty!"
+	  }
+	}	
+  ]
+}

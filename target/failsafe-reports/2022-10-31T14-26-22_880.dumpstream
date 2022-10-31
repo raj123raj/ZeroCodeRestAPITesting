@@ -1,0 +1,4 @@
+# Created at 2022-10-31T14:26:23.610
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Priya\geeksforgeeks\tutorials-master\tutorials-master\testing-modules\zerocode\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+

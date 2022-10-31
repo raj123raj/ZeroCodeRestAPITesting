@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.gfg.zerocode.rest.UserEndpointIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.25 s - in com.gfg.zerocode.rest.UserEndpointIT
